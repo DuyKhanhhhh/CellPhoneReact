@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    padding: 0;
+}
+.main-header{
+    background-color: #d00;
+    height: 65px;
+    position: sticky;
+    top: 0;
+    transition: all .3s;
+    width: 100%;
+    z-index: 888;
+}
+.header-top{
+    display: flex;
+    height: 65px;
+    padding: 0;
+}
+.header-top .container {
+    align-items: center;
+    justify-content: space-between;
+}
+.flex{
+    display: flex;
+}
+.header-top .logo{
+    align-items: center;
+    display: flex;
+    max-width: 260px;
+    width: 100%;
+}
+.header-top .logo img{
+    display: block;
+    height: auto;
+    height: 45px;
+    max-width: 245px;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+.header-top .search{
+    max-width: calc(100% - 900px);
+    min-width: 150px;
+    padding: 0 10px;
+    position: relative;
+    width: 100%;
+}
+.header-top .search form {
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+.header-top .search form input {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 16px;
+    height: 35px;
+    padding: 5px 47px 5px 12px;
+    transition: border-color .2s ease-in-out;
+    width: 100%;
+}
+.header-top .search form button {
+    cursor: pointer;
+    line-height: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.iconSearch{
+    width: 20px;
+    height: 20px;
+    fill: #dd0000;
+}
+.header-top .location-switch {
+    background: #ff5050;
+    border-radius: 7px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0;
+    padding: 3px 5px 3px 5px;
+    width: 110px;
+    position: relative;
+}
+.header-top .location-switch .location-select-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 12px;
+}
+.header-top .location-switch .current-location {
+    align-items: center;
+    display: flex;
+}
+.header-top .location-switch .current-location .location-text {
+    color: #ffe45f;
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+.header-top .location-switch .location-select-wrapper .my_location {
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 11px;
+    line-height: 14px;
+    margin-left: 0;
+    margin-top: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 60px;
+    text-overflow: ellipsis;
+}
+.header-top .location-switch .location-select-wrapper .location-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: transparent;
+    cursor: pointer;
+    height: 35px;
+    outline: 0;
+    position: absolute;
+    text-align: center;
+    width: 85%;
+}
+.header-top .location-switch .location-select-wrapper .location-select option {
+    color: #111;
+    font-size: 13px;
+}
+option {
+    font-weight: normal;
+    display: block;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    white-space: nowrap;
+}
+.header-top .info_website {
+    display: flex;
+    justify-content: space-between;
+    max-width: 495px;
+    width: 100%;
+}
+.header-top .info_website .hotline {
+    width: 180px !important;
+}
+.header-top .info_website_item {
+    align-items: center;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 0 2.5px;
+    width: calc(33.33333% - 5px);
+}
+.header-top .info_website_item a {
+    align-items: center;
+    border-radius: 7px;
+    color: #fadede;
+    display: flex;
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 6.5px 5px;
+}
+.header-top .info_website_icon {
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    margin-right: 7px;
+    position: relative;
+    width: 28px;
+}
+.header-top .info_website_icon svg {
+    stroke: #fff;
+    height: 16px;
+    width: 16px;
+}
+.header-top .info_website_item a span {
+    color: #fff;
+    font-weight: 600;
+}
+
+.header-top .info_website .cart .cart_counter {
+    color: #fff;
+    font-size: 10px;
+    position: absolute;
+    right: 10px;
+    top: 9px;
+}
