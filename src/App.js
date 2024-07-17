@@ -4,10 +4,11 @@ import { BrowserRouter, Routes } from 'react-router-dom';
 import FooterHome from './layout/FooterHome';
 import HeaderHome from './layout/HeaderHome';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import HomeProduct from './page/HomeProduct';
 function App() {
   return (
     <>
-      <FooterHome></FooterHome>
+      <HomeProduct />
       <BrowserRouter>
         <Routes>
         </Routes>
