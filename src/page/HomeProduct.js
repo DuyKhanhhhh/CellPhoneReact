@@ -5,8 +5,9 @@ import "../css/HomeProduct.css"
 import { CiViewList } from "react-icons/ci";
 import { IoHomeSharp } from "react-icons/io5";
 import { MdNavigateNext } from "react-icons/md";
-import { FaFilter, FaSortAmountDown, FaSortAmountUpAlt } from "react-icons/fa";
+import { FaFilter, FaSortAmountDown, FaSortAmountUpAlt, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { BiShow } from "react-icons/bi";
+import { Link } from 'react-router-dom';
 
 
 
@@ -95,13 +96,9 @@ export default function HomeProduct() {
                         <div className='section-list__item '>
                             <FaSortAmountDown /> Giá Cao - Thấp
                         </div>
-                    </div>
-                    <div className='section-list__content'>
                         <div className='section-list__item '>
                             <FaSortAmountUpAlt /> Giá Thấp - Cao
                         </div>
-                    </div>
-                    <div className='section-list__content'>
                         <div className='section-list__item '>
                             <BiShow /> Xem
                         </div>
@@ -110,7 +107,44 @@ export default function HomeProduct() {
             </div>
             <div className='section-product'>
                 <div className='container'>
-                    <div className='section-product__content'></div>
+                    <div className='section-product__content'>
+                        <div className='product-list list-products'>
+                            <div className='list-products__item'>
+                                <div className='thumbnail'>
+                                    <img className='lazyload' src='	https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png'></img>
+                                </div>
+                                <div className='detail'>
+                                    <h3 className='title_name'>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</h3>
+                                    <div className='price mb-12'>
+                                        <span>1222</span>
+                                    </div>
+                                    <div className='extra_tick'>
+                                        <label className='installment'>Trả góp 0% </label>
+                                        <label className='freeship'>Miễn phí ship </label>
+                                    </div>
+                                    <div className='block-rate_product'>
+                                        <div className='block-rate__star'>
+                                            <FaStar />
+                                            <FaStar />
+                                            <FaStar />
+                                            <FaStar />
+                                            <FaStarHalfAlt />
+                                        </div>
+                                        <div className="rate_title">
+                                            (45 đánh giá)
+                                        </div>
+                                    </div>
+                                    <div className="cb_promotion_stand">
+                                        <div className="gift-detail">
+                                            <span className=':before'></span>
+                                            HSSV giảm thêm <span className="js-format-price">300.000 ₫</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
             <FooterHome />

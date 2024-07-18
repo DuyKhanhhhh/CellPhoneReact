@@ -13,6 +13,7 @@ body {
     font-style: normal;
     position: relative;
 }
+/* Hedaer Content */
 .header-breadcrumb {
     background-color: #870000;
     padding: 6px 0;
@@ -117,6 +118,7 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
     padding: 3px 5px;
 }
+/* List Product */
 .section-list__title {
     flex: 0 0 100%;
     letter-spacing: normal;
@@ -135,6 +137,7 @@ h1, h2, h3, h4 {
 .section-list__item span {
     background-color: #f3f4f6;
 }
+
 .section-product__content {
     flex: 0 0 100%;
 }
@@ -159,19 +162,22 @@ h1, h2, h3, h4 {
     height: 100%;
     padding: 3px 10px;
 }
+.detail{
+  padding: 0 5px;
+}
 .list-products__item .thumbnail {
     align-items: center;
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
     position: relative;
+    
 }
 .list-products__item .title_name {
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     color: #4d4d4d;
     display: -webkit-box;
-    font-size: 13px;
+    font-size: 13px;      
     font-weight: 600;
     line-height: 1.4;
     max-height: 55px;
@@ -179,4 +185,145 @@ h1, h2, h3, h4 {
     padding: 0 0 5px;
     text-overflow: ellipsis;
     width: 100%;
+}
+.list-products__item .thumbnail img {
+  height: 150px;
+  max-width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: auto;
+}
+.list-products__item .title_name{
+  color: #4d4d4d;
+  display: -webkit-box;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  max-height: 55px;
+  overflow: hidden;
+  padding: 0 0 5px;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.list-products__item .ex_pricesale{
+  background-color: #fff86e;
+  box-shadow: 0 1px 0 0 rgba(60,64,67,.102),0 2px 3px 2px rgba(60,64,67,.149);
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 22px;
+  padding: 1px 10px;
+  position: absolute;
+  right: -6px;
+  top: 6px;
+}
+.list-products__item .price{
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.list-products__item .price span{
+  color: #e10c00;
+  margin-right: 20px;
+}
+.list-products__item .extra_tick{
+  display: flex;
+  flex-flow: column;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  top: 100px;
+}
+.list-products__item .extra_tick .installment{
+  background-color: #de0000;
+}
+.extra_tick .installment{
+  align-items: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #fff;
+  display: flex;
+  font-size: 10px;
+  font-weight: 600;
+  height: 20px;
+  margin-bottom: 0;
+  padding: 0 5px;
+  width: fit-content;
+}
+.list-products__item .extra_tick .freeship{
+  background-color: #0b0a09;
+}
+.list-products__item .extra_tick .freeship, .list-products__item .extra_tick .installment {
+  align-items: center;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff;
+  display: flex;
+  font-size: 10px;
+  font-weight: 600;
+  height: 20px;
+  margin-bottom: 0;
+  padding: 0 5px;
+  width: fit-content;
+}
+.block-rate_product {
+  align-items: center;  
+  color: #d3ced2;
+  display: flex;
+  font-size: 11px;
+  margin: 5px 0;
+}
+.block-rate_product .block-rate__star{
+  margin-right: 10px;
+}
+.list-products__item .cb_promotion_stand{
+  background-color: #fff;
+  border-radius: 3px;
+  display: block;
+  line-height: 1.2;
+  margin: 0;
+  max-height: 36px;
+  overflow: hidden;
+  padding: 5px 0;
+  position: relative;
+  transition: transform .2s;
+  display: -webkit-box;
+}
+.list-products__item .cb_promotion .gift-detail:last-child, .list-products__item .cb_promotion_stand .gift-detail:last-child {
+  margin-bottom: 0;
+}
+.list-products__item .cb_promotion .gift-detail:first-child, .list-products__item .cb_promotion_stand .gift-detail:first-child {
+  margin-top: 0;
+}
+.list-products__item .cb_promotion .gift-detail, .list-products__item .cb_promotion_stand .gift-detail {
+  line-height: 16px;
+  margin: 5px 0;
+  padding-left: 30px;
+  position: relative;
+}
+.list-products__item .cb_promotion *, .list-products__item .cb_promotion_stand * {
+  color: #5d5d5d !important;
+  font-size: 11px;
+  font-style: normal !important;
+  line-height: 1.4;
+  margin-bottom: 0;
+  pointer-events: none;
+  text-decoration: none !important;
+  text-transform: none !important;
+}
+.products__item .cb_promotion_stand .gift-detail:before {
+    background: #f7941e 0 0 no-repeat padding-box;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .161);
+    color: #fff;
+    content: "KM";
+    font-size: 8px;
+    font-weight: 600;
+    left: 0;
+    line-height: normal;
+    padding: 2px 4px;
+    position: absolute;
+    top: 2px;
 }
