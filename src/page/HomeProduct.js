@@ -1,34 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import HeaderHome from '../layout/HeaderHome'
 import FooterHome from '../layout/FooterHome'
 import "../css/HomeProduct.css"
-import { CiViewList } from "react-icons/ci";
-import { IoHomeSharp } from "react-icons/io5";
-import { MdNavigateNext } from "react-icons/md";
 import { FaFilter, FaSortAmountDown, FaSortAmountUpAlt, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { BiShow } from "react-icons/bi";
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
+import HeaderBreadcrumb from '../layout/HeaderBreadcrumb';
 
 
 export default function HomeProduct() {
+    const [product, setProduct] = useState([]);
+
+    async function getProduct() {
+        const response = await axios.get(`http://localhost:8080/api/product`)
+        console.log(response.data);
+        setProduct(response.data)
+    };
+
+    useEffect(() => {
+        getProduct();
+
+    }, []);
+
+    function formatNumberWithCommas(number) {
+        return number.toLocaleString('de-DE');
+    }
+
     return (
         <div>
             <HeaderHome />
-            <div className='header-breadcrumb'>
-                <div className='container'>
-                    <div class="header-breadcrumb__wrapper">
-                        <div className='header-breadcrumb__icon'>
-                            <CiViewList className='icon-list' />
-                        </div >
-                        <ul className='header-breadcrumb__list'>
-                            <li className='header-breadcrumb__item'><IoHomeSharp className='icon-white' /> <span>Trang chủ</span><MdNavigateNext className='icon-white' />
-                            </li>
-                            <li className='header-breadcrumb__item'> <span>Điện thoại</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <HeaderBreadcrumb />
             <div className='main site_main '>
                 <div className='mt-2 mb-2 container'>
                     <h1 class="title_main">Điện thoại - Apple iPhone, Samsung, Xiaomi, Nokia, Tecno..</h1>
@@ -109,40 +111,43 @@ export default function HomeProduct() {
                 <div className='container'>
                     <div className='section-product__content'>
                         <div className='product-list list-products'>
-                            <div className='list-products__item'>
-                                <div className='thumbnail'>
-                                    <img className='lazyload' src='	https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png'></img>
-                                </div>
-                                <div className='detail'>
-                                    <h3 className='title_name'>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</h3>
-                                    <div className='price mb-12'>
-                                        <span>1222</span>
-                                    </div>
-                                    <div className='extra_tick'>
-                                        <label className='installment'>Trả góp 0% </label>
-                                        <label className='freeship'>Miễn phí ship </label>
-                                    </div>
-                                    <div className='block-rate_product'>
-                                        <div className='block-rate__star'>
-                                            <FaStar />
-                                            <FaStar />
-                                            <FaStar />
-                                            <FaStar />
-                                            <FaStarHalfAlt />
+                            {product.map((item) => (
+                                <Link to={`/detailProduct/${item.id}`}>
+                                    <div className='list-products__item'>
+                                        <div className='thumbnail'>
+                                            <img className='lazyload' src={item.image}></img>
                                         </div>
-                                        <div className="rate_title">
-                                            (45 đánh giá)
+                                        <div className='detail'>
+                                            <h3 className='title_name'>{item.name}</h3>
+                                            <div className='price mb-12'>
+                                                <span>{formatNumberWithCommas(item.price)}đ</span>
+                                            </div>
+                                            <div className='extra_tick'>
+                                                <label className='installment'>Trả góp 0% </label>
+                                                <label className='freeship'>Miễn phí ship </label>
+                                            </div>
+                                            <div className='block-rate_product'>
+                                                <div className='block-rate__star'>
+                                                    <FaStar />
+                                                    <FaStar />
+                                                    <FaStar />
+                                                    <FaStar />
+                                                    <FaStarHalfAlt />
+                                                </div>
+                                                <div className="rate_title">
+                                                    (45 đánh giá)
+                                                </div>
+                                            </div>
+                                            <div className="cb_promotion_stand">
+                                                <div className="gift-detail">
+                                                    <span className=':before'></span>
+                                                    HSSV giảm thêm <span className="js-format-price">300.000 ₫</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="cb_promotion_stand">
-                                        <div className="gift-detail">
-                                            <span className=':before'></span>
-                                            HSSV giảm thêm <span className="js-format-price">300.000 ₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                                </Link>
+                            ))}
                         </div>
                     </div>
                 </div>
